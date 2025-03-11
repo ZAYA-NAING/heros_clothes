@@ -1,0 +1,143 @@
+{
+  "src/Resources/assets/css/app.css": {
+    "file": "assets/app-30b59df7.css",
+    "isEntry": true,
+    "src": "src/Resources/assets/css/app.css"
+  },
+  "src/Resources/assets/fonts/Technor-Black.woff": {
+    "file": "assets/Technor-Black-7d6b1873.woff",
+    "src": "src/Resources/assets/fonts/Technor-Black.woff"
+  },
+  "src/Resources/assets/fonts/Technor-Bold.woff": {
+    "file": "assets/Technor-Bold-f548bc65.woff",
+    "src": "src/Resources/assets/fonts/Technor-Bold.woff"
+  },
+  "src/Resources/assets/fonts/Technor-Extralight.woff": {
+    "file": "assets/Technor-Extralight-3662cc75.woff",
+    "src": "src/Resources/assets/fonts/Technor-Extralight.woff"
+  },
+  "src/Resources/assets/fonts/Technor-Light.woff": {
+    "file": "assets/Technor-Light-62913e23.woff",
+    "src": "src/Resources/assets/fonts/Technor-Light.woff"
+  },
+  "src/Resources/assets/fonts/Technor-Medium.woff": {
+    "file": "assets/Technor-Medium-b4e20c14.woff",
+    "src": "src/Resources/assets/fonts/Technor-Medium.woff"
+  },
+  "src/Resources/assets/fonts/Technor-Regular.woff": {
+    "file": "assets/Technor-Regular-220e3e5f.woff",
+    "src": "src/Resources/assets/fonts/Technor-Regular.woff"
+  },
+  "src/Resources/assets/fonts/Technor-Semibold.woff": {
+    "file": "assets/Technor-Semibold-76afe793.woff",
+    "src": "src/Resources/assets/fonts/Technor-Semibold.woff"
+  },
+  "src/Resources/assets/fonts/Technor-Variable.woff": {
+    "file": "assets/Technor-Variable-94b1d41d.woff",
+    "src": "src/Resources/assets/fonts/Technor-Variable.woff"
+  },
+  "src/Resources/assets/fonts/Z06-Walone_Bold.ttf": {
+    "file": "assets/Z06-Walone_Bold-13f6795f.ttf",
+    "src": "src/Resources/assets/fonts/Z06-Walone_Bold.ttf"
+  },
+  "src/Resources/assets/fonts/Z06-Walone_Thin.ttf": {
+    "file": "assets/Z06-Walone_Thin-91895e6c.ttf",
+    "src": "src/Resources/assets/fonts/Z06-Walone_Thin.ttf"
+  },
+  "src/Resources/assets/fonts/bagisto-shop.woff": {
+    "file": "assets/bagisto-shop-5afe0d07.woff",
+    "src": "src/Resources/assets/fonts/bagisto-shop.woff"
+  },
+  "src/Resources/assets/images/cash-on-delivery.png": {
+    "file": "assets/cash-on-delivery-73061c49.png",
+    "src": "src/Resources/assets/images/cash-on-delivery.png"
+  },
+  "src/Resources/assets/images/default-language.svg": {
+    "file": "assets/default-language-6ef0ef70.svg",
+    "src": "src/Resources/assets/images/default-language.svg"
+  },
+  "src/Resources/assets/images/empty-dwn-product.png": {
+    "file": "assets/empty-dwn-product-3c9202e1.png",
+    "src": "src/Resources/assets/images/empty-dwn-product.png"
+  },
+  "src/Resources/assets/images/favicon.ico": {
+    "file": "assets/favicon-e01eba0e.ico",
+    "src": "src/Resources/assets/images/favicon.ico"
+  },
+  "src/Resources/assets/images/hero-image.jpg": {
+    "file": "assets/hero-image-feee3420.jpg",
+    "src": "src/Resources/assets/images/hero-image.jpg"
+  },
+  "src/Resources/assets/images/hero-image.webp": {
+    "file": "assets/hero-image-3170dce6.webp",
+    "src": "src/Resources/assets/images/hero-image.webp"
+  },
+  "src/Resources/assets/images/large-product-placeholder.webp": {
+    "file": "assets/large-product-placeholder-13b8a96b.webp",
+    "src": "src/Resources/assets/images/large-product-placeholder.webp"
+  },
+  "src/Resources/assets/images/logo.svg": {
+    "file": "assets/logo-a8e3c64c.svg",
+    "src": "src/Resources/assets/images/logo.svg"
+  },
+  "src/Resources/assets/images/medium-product-placeholder.webp": {
+    "file": "assets/medium-product-placeholder-3b1a7b7d.webp",
+    "src": "src/Resources/assets/images/medium-product-placeholder.webp"
+  },
+  "src/Resources/assets/images/money-transfer.png": {
+    "file": "assets/money-transfer-115da55a.png",
+    "src": "src/Resources/assets/images/money-transfer.png"
+  },
+  "src/Resources/assets/images/no-address.png": {
+    "file": "assets/no-address-740c7843.png",
+    "src": "src/Resources/assets/images/no-address.png"
+  },
+  "src/Resources/assets/images/paypal.png": {
+    "file": "assets/paypal-df581855.png",
+    "src": "src/Resources/assets/images/paypal.png"
+  },
+  "src/Resources/assets/images/review.png": {
+    "file": "assets/review-342fab8f.png",
+    "src": "src/Resources/assets/images/review.png"
+  },
+  "src/Resources/assets/images/small-product-placeholder.webp": {
+    "file": "assets/small-product-placeholder-64b7f208.webp",
+    "src": "src/Resources/assets/images/small-product-placeholder.webp"
+  },
+  "src/Resources/assets/images/spinner.svg": {
+    "file": "assets/spinner-51c5cf50.svg",
+    "src": "src/Resources/assets/images/spinner.svg"
+  },
+  "src/Resources/assets/images/thank-you.png": {
+    "file": "assets/thank-you-aa4a2b62.png",
+    "src": "src/Resources/assets/images/thank-you.png"
+  },
+  "src/Resources/assets/images/unisex.webp": {
+    "file": "assets/unisex-2f6af337.webp",
+    "src": "src/Resources/assets/images/unisex.webp"
+  },
+  "src/Resources/assets/images/user-placeholder.png": {
+    "file": "assets/user-placeholder-4670a452.png",
+    "src": "src/Resources/assets/images/user-placeholder.png"
+  },
+  "src/Resources/assets/images/wishlist.png": {
+    "file": "assets/wishlist-8c226c7a.png",
+    "src": "src/Resources/assets/images/wishlist.png"
+  },
+  "src/Resources/assets/images/women.webp": {
+    "file": "assets/women-4b952408.webp",
+    "src": "src/Resources/assets/images/women.webp"
+  },
+  "src/Resources/assets/js/app.css": {
+    "file": "assets/app-05f8acf7.css",
+    "src": "src/Resources/assets/js/app.css"
+  },
+  "src/Resources/assets/js/app.js": {
+    "css": [
+      "assets/app-05f8acf7.css"
+    ],
+    "file": "assets/app-19332121.js",
+    "isEntry": true,
+    "src": "src/Resources/assets/js/app.js"
+  }
+}
