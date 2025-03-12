@@ -4,9 +4,9 @@
         "dev": "vite",
         "build": "vite build",
         "dev:admin": "cd packages/Webkul/Admin && npm run dev",
-        "build:admin": "cd packages/Webkul/Admin && npm run build",
+        "build:admin": "cd packages/Webkul/Admin && npm ci && npm run build",
         "dev:shop": "cd packages/Webkul/Shop && npm run dev",
-        "build:shop": "cd packages/Webkul/Shop && npm run build"
+        "build:shop": "cd packages/Webkul/Shop && npm ci && npm run build"
     },
     "devDependencies": {
         "axios": "^1.6.4",
