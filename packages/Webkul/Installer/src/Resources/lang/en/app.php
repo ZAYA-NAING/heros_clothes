@@ -317,7 +317,7 @@ return [
 
                 'offer-information' => [
                     'content' => [
-                        'title' => 'Get UPTO 40% OFF on your 1st order SHOP NOW',
+                        'title' => 'SHOP NOW',
                     ],
 
                     'name' => 'Offer Information',
