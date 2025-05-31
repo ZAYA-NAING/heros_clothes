@@ -36,6 +36,13 @@ class ThemeCustomization extends TranslatableModel implements ThemeCustomization
     public const IMAGE_CAROUSEL = 'image_carousel';
 
     /**
+     * Image link carousel precision.
+     *
+     * @var string
+     */
+    public const IMAGE_LINK_CAROUSEL = 'image_link_carousel';
+
+    /**
      * Product carousel precision.
      *
      * @var string

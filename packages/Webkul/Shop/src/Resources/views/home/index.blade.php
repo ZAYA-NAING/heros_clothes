@@ -16,7 +16,7 @@
     <x-slot:title>
         {{  $channel->home_seo['meta_title'] ?? '' }}
     </x-slot>
-    
+
     <!-- Loop over the theme customization -->
     @foreach ($customizations as $customization)
         @php ($data = $customization->options) @endphp
@@ -26,6 +26,11 @@
             @case ($customization::IMAGE_CAROUSEL)
                 <!-- Image Carousel -->
                 <x-shop::carousel :options="$data" aria-label="Image Carousel" />
+
+                @break
+            @case ($customization::IMAGE_LINK_CAROUSEL)
+                <!-- Image Link Carousel -->
+                <x-shop::link-carousel :options="$data" aria-label="Image Link Carousel" />
 
                 @break
             @case ($customization::STATIC_CONTENT)

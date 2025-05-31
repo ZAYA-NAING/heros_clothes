@@ -34,13 +34,13 @@ class ThemeCustomizationRepository extends Repository
             $data[$locale]['options']['css'] = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $data[$locale]['options']['css']);
         }
 
-        if (in_array($data['type'], ['image_carousel', 'services_content'])) {
+        if (in_array($data['type'], ['image_carousel', 'image_link_carousel', 'services_content'])) {
             unset($data[$locale]['options']);
         }
 
         $theme = parent::update($data, $id);
 
-        if (in_array($data['type'], ['image_carousel', 'services_content'])) {
+        if (in_array($data['type'], ['image_carousel', 'image_link_carousel', 'services_content'])) {
             $this->uploadImage(request()->all(), $theme);
         }
 
@@ -62,6 +62,12 @@ class ThemeCustomizationRepository extends Repository
             }
         }
 
+        if (isset($data[$locale]['deleted_slider_links'])) {
+            foreach ($data[$locale]['deleted_slider_links'] as $slider) {
+                continue; // No action needed for deleted slider links
+            }
+        }
+
         if (! isset($data[$locale]['options'])) {
             return;
         }
@@ -74,6 +80,12 @@ class ThemeCustomizationRepository extends Repository
                     'service_icon' => $image['service_icon'],
                     'description'  => $image['description'],
                     'title'        => $image['title'],
+                ];
+            } elseif ($data['type'] == 'image_link_carousel' && isset($image['link'])) {
+                $options['images'][] = [
+                    'image' => $image['link'],
+                    'link'  => $image['link'],
+                    'title' => $image['title'],
                 ];
             } elseif ($image['image'] instanceof UploadedFile) {
                 try {
