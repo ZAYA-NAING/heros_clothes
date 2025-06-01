@@ -60,7 +60,7 @@
                     <input
                         type="hidden"
                         :name="'{{ $currentLocale->code }}[options]['+ index +'][image]'"
-                        :value="image.link"
+                        :value="image.image"
                     />
 
 
