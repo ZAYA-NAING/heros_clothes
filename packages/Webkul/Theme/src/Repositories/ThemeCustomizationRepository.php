@@ -81,9 +81,9 @@ class ThemeCustomizationRepository extends Repository
                     'description'  => $image['description'],
                     'title'        => $image['title'],
                 ];
-            } elseif ($data['type'] == 'image_link_carousel' && isset($image['link'])) {
+            } elseif ($data['type'] == 'image_link_carousel') {
                 $options['images'][] = [
-                    'image' => $image['link'],
+                    'image' => $image['image'],
                     'link'  => $image['link'],
                     'title' => $image['title'],
                 ];

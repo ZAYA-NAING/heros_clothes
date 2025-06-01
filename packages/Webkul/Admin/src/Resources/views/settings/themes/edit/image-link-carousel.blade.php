@@ -57,6 +57,12 @@
                         :value="image.link"
                     />
 
+                    <input
+                        type="hidden"
+                        :name="'{{ $currentLocale->code }}[options]['+ index +'][image]'"
+                        :value="image.link"
+                    />
+
 
                     <!-- Details -->
                     <div
@@ -80,6 +86,23 @@
 
                                     <span class="text-gray-600 transition-all dark:text-gray-300">
                                         @{{ image.link }}
+                                    </span>
+                                </p>
+
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    @lang('admin::app.settings.themes.edit.image'):
+
+                                    <span class="text-gray-600 transition-all dark:text-gray-300">
+                                        <a
+                                            :href="image.image"
+                                            :ref="'image_' + index"
+                                            target="_blank"
+                                            class="text-blue-600 transition-all hover:underline ltr:ml-2 rtl:mr-2"
+                                        >
+                                            <span>
+                                                @{{ image.image }}
+                                            </span>
+                                        </a>
                                     </span>
                                 </p>
                             </div>
@@ -171,7 +194,21 @@
                                  <x-admin::form.control-group.error control-name="{{ $currentLocale->code }}[link]" />
                             </x-admin::form.control-group>
 
+                             <x-admin::form.control-group>
+                                <x-admin::form.control-group.label class="required">
+                                    @lang('admin::app.settings.themes.edit.slider-image')
+                                </x-admin::form.control-group.label>
 
+                                <x-admin::form.control-group.control
+                                    type="text"
+                                    name="{{ $currentLocale->code }}[image]"
+                                    rules="required"
+                                    :placeholder="trans('admin::app.settings.themes.edit.slider-image')"
+                                    :label="trans('admin::app.settings.themes.edit.slider-image')"
+                                />
+
+                                 <x-admin::form.control-group.error control-name="{{ $currentLocale->code }}[image]" />
+                            </x-admin::form.control-group>
 
                         </x-slot>
 
@@ -223,6 +260,7 @@
                         this.sliders.images.push({
                             title: formData.get("{{ $currentLocale->code }}[title]"),
                             link: formData.get("{{ $currentLocale->code }}[link]"),
+                            image: formData.get("{{ $currentLocale->code }}[image]"),
                         });
 
                         resetForm();

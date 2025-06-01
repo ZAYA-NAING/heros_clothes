@@ -57,6 +57,7 @@ it('should store the newly created theme', function () {
             'product_carousel',
             'category_carousel',
             'image_carousel',
+            'image_link_carousel',
             'footer_links',
             'services_content',
         ]),
@@ -143,6 +144,20 @@ it('should update the theme customizations', function () {
             ];
 
             break;
+
+         case ThemeCustomization::IMAGE_LINK_CAROUSEL:
+            $data[app()->getLocale()] = [
+                'options' => [
+                    [
+                        'title' => fake()->title(),
+                        'link'  => fake()->url(),
+                        'image' => fake()->url(),
+                    ],
+                ],
+            ];
+
+            break;
+
 
         case ThemeCustomization::FOOTER_LINKS:
             $data[app()->getLocale()] = [

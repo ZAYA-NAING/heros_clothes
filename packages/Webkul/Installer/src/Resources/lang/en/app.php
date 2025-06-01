@@ -299,6 +299,14 @@ return [
                     'name' => 'Game Container',
                 ],
 
+                'image-link-carousel' => [
+                    'name' => 'Image Link Carousel',
+
+                    'sliders' => [
+                        'title' => 'Get Ready For New Collection',
+                    ],
+                ],
+
                 'image-carousel' => [
                     'name' => 'Image Carousel',
 

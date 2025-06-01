@@ -59,12 +59,22 @@ class ThemeCustomizationTableSeeder extends Seeder
 
         DB::table('theme_customizations')
             ->insert([
+                 [
+                    'id'         => 13,
+                    'type'       => 'image_link_carousel',
+                    'name'       => trans('installer::app.seeders.shop.theme-customizations.image-carousel.name', [], $defaultLocale),
+                    'sort_order' => 1,
+                    'status'     => 1,
+                    'channel_id' => 1,
+                    'created_at' => $now,
+                    'updated_at' => $now,
+                ],
                 [
                     'id'         => 1,
                     'type'       => 'image_carousel',
                     'name'       => trans('installer::app.seeders.shop.theme-customizations.image-carousel.name', [], $defaultLocale),
                     'sort_order' => 1,
-                    'status'     => 1,
+                    'status'     => 0,
                     'channel_id' => 1,
                     'created_at' => $now,
                     'updated_at' => $now,
@@ -189,6 +199,34 @@ class ThemeCustomizationTableSeeder extends Seeder
                     /**
                      * Customizations for current locale
                      */
+                    [
+                        'theme_customization_id' => 1,
+                        'locale'                 => $locale,
+                        'options'                => json_encode([
+                            'images' => [
+                                [
+                                    'title' => trans('installer::app.seeders.shop.theme-customizations.image-carousel.sliders.title', [], $locale),
+                                    'link'  => '',
+                                    'image' => '',
+                                ],
+                                [
+                                    'title' => trans('installer::app.seeders.shop.theme-customizations.image-carousel.sliders.title', [], $locale),
+                                    'link'  => '',
+                                    'image' => '',
+                                ],
+                                [
+                                    'title' => trans('installer::app.seeders.shop.theme-customizations.image-carousel.sliders.title', [], $locale),
+                                    'link'  => '',
+                                    'image' => '',
+                                ],
+                                [
+                                    'title' => trans('installer::app.seeders.shop.theme-customizations.image-carousel.sliders.title', [], $locale),
+                                    'link'  => '',
+                                    'image' => '',
+                                ],
+                            ],
+                        ]),
+                    ],
                     [
                         'theme_customization_id' => 1,
                         'locale'                 => $locale,
