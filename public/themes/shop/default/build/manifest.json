@@ -48,6 +48,10 @@
     "file": "assets/bagisto-shop-5afe0d07.woff",
     "src": "src/Resources/assets/fonts/bagisto-shop.woff"
   },
+  "src/Resources/assets/images/1_logo.svg": {
+    "file": "assets/1_logo-ce982eb0.svg",
+    "src": "src/Resources/assets/images/1_logo.svg"
+  },
   "src/Resources/assets/images/cash-on-delivery.png": {
     "file": "assets/cash-on-delivery-73061c49.png",
     "src": "src/Resources/assets/images/cash-on-delivery.png"
@@ -77,7 +81,7 @@
     "src": "src/Resources/assets/images/large-product-placeholder.webp"
   },
   "src/Resources/assets/images/logo.svg": {
-    "file": "assets/logo-a9834563.svg",
+    "file": "assets/logo-ae96e01d.svg",
     "src": "src/Resources/assets/images/logo.svg"
   },
   "src/Resources/assets/images/logo_1.svg": {
