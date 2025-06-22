@@ -61,7 +61,7 @@
     "src": "src/Resources/assets/images/empty-dwn-product.png"
   },
   "src/Resources/assets/images/favicon.ico": {
-    "file": "assets/favicon-e01eba0e.ico",
+    "file": "assets/favicon-a40ad626.ico",
     "src": "src/Resources/assets/images/favicon.ico"
   },
   "src/Resources/assets/images/hero-image.jpg": {
@@ -140,7 +140,7 @@
     "css": [
       "assets/app-05f8acf7.css"
     ],
-    "file": "assets/app-6b487777.js",
+    "file": "assets/app-9e12d22c.js",
     "isEntry": true,
     "src": "src/Resources/assets/js/app.js"
   }
