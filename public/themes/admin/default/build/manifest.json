@@ -21,7 +21,7 @@
     "src": "src/Resources/assets/images/dark-logo-default.svg"
   },
   "src/Resources/assets/images/dark-logo.svg": {
-    "file": "assets/dark-logo-6b257ab0.svg",
+    "file": "assets/dark-logo-60184c97.svg",
     "src": "src/Resources/assets/images/dark-logo.svg"
   },
   "src/Resources/assets/images/empty-placeholders/customers.svg": {
@@ -69,7 +69,7 @@
     "src": "src/Resources/assets/images/logo-default.svg"
   },
   "src/Resources/assets/images/logo.svg": {
-    "file": "assets/logo-2860d775.svg",
+    "file": "assets/logo-0bd9ef7c.svg",
     "src": "src/Resources/assets/images/logo.svg"
   },
   "src/Resources/assets/images/product-placeholders/front.svg": {
@@ -188,7 +188,7 @@
     "css": [
       "assets/app-c04ede37.css"
     ],
-    "file": "assets/app-a35223cd.js",
+    "file": "assets/app-f3dd454a.js",
     "isEntry": true,
     "src": "src/Resources/assets/js/app.js"
   },
