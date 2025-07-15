@@ -16,8 +16,12 @@
     "file": "assets/customers-199df769.svg",
     "src": "src/Resources/assets/images/customers.svg"
   },
+  "src/Resources/assets/images/dark-logo-default.svg": {
+    "file": "assets/dark-logo-default-ea7984e7.svg",
+    "src": "src/Resources/assets/images/dark-logo-default.svg"
+  },
   "src/Resources/assets/images/dark-logo.svg": {
-    "file": "assets/dark-logo-ea7984e7.svg",
+    "file": "assets/dark-logo-6b257ab0.svg",
     "src": "src/Resources/assets/images/dark-logo.svg"
   },
   "src/Resources/assets/images/empty-placeholders/customers.svg": {
@@ -60,8 +64,12 @@
     "file": "assets/icon-options-ebfcd268.svg",
     "src": "src/Resources/assets/images/settings/shipping-method.svg"
   },
+  "src/Resources/assets/images/logo-default.svg": {
+    "file": "assets/logo-default-f02a1643.svg",
+    "src": "src/Resources/assets/images/logo-default.svg"
+  },
   "src/Resources/assets/images/logo.svg": {
-    "file": "assets/logo-f02a1643.svg",
+    "file": "assets/logo-2860d775.svg",
     "src": "src/Resources/assets/images/logo.svg"
   },
   "src/Resources/assets/images/product-placeholders/front.svg": {
@@ -180,7 +188,7 @@
     "css": [
       "assets/app-c04ede37.css"
     ],
-    "file": "assets/app-cdab2901.js",
+    "file": "assets/app-a35223cd.js",
     "isEntry": true,
     "src": "src/Resources/assets/js/app.js"
   },
