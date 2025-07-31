@@ -143,4 +143,29 @@ class InvoiceController extends Controller
             'invoice-'.$invoice->created_at->format('d-m-Y')
         );
     }
+
+    /**
+     * Print and download the for the specified resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function printMyanmarCurrencyInvoice(int $id)
+    {
+        $currency = core()->getAllCurrencies()->where('code', 'MMK');
+
+        if (empty($currency)) {
+             return redirect()->route('admin.settings.currencies.index');
+        }
+
+        if (is_null(core()->getExchangeRate($currency->first()->id))) {
+             return redirect()->route('admin.settings.exchange_rates.index');
+        }
+
+        $invoice = $this->invoiceRepository->findOrFail($id);
+
+        return $this->downloadPDF(
+            view('admin::sales.invoices.pdf-mmk', compact('invoice'), ['currency' => $currency->first()->toArray()])->render(),
+            'invoice-'.$invoice->created_at->format('d-m-Y')
+        );
+    }
 }

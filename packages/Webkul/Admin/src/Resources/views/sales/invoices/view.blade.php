@@ -5,6 +5,7 @@
 
     @php
         $order = $invoice->order;
+        $currencyCode = core()->getAllCurrencies()->where('code', 'MMK')->first()?->code;
     @endphp
 
     <!-- Main Body -->
@@ -47,6 +48,16 @@
 
                 @lang('admin::app.sales.invoices.view.print')
             </a>
+            @if($currencyCode === 'MMK')
+                <a
+                    href="{{ route('admin.sales.invoices.print-mmk', $invoice->id) }}"
+                    class="inline-flex w-full max-w-max cursor-pointer items-center justify-between gap-x-2 px-1 py-1.5 text-center font-semibold text-gray-600 transition-all hover:rounded-md hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-800"
+                >
+                    <span class="icon-printer text-2xl"></span>
+
+                    @lang('admin::app.sales.invoices.view.print-mmk')
+                </a>
+            @endif
 
             <!-- Send Duplicate Invoice Modal -->
             <div>
@@ -338,7 +349,8 @@
 
                         <!-- Grand Total -->
                         <p class="text-base font-semibold !leading-5 text-gray-800 dark:text-white">
-                            {{ core()->formatBasePrice($invoice->base_grand_total) }}
+                            {{ core()->formatBasePrice($invoice->base_grand_total) }} <br/>
+                            {{-- {{ core()->formatPrice(core()->convertPrice($invoice->base_grand_total, 'MMK'), 'MMK') }} --}}
                         </p>
                     </div>
                 </div>

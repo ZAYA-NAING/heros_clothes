@@ -211,7 +211,6 @@
             }
         </style>
     </head>
-
     <body dir="{{ core()->getCurrentLocale()->direction }}">
         <div class="logo-container {{ core()->getCurrentLocale()->direction }}">
             @if (core()->getConfigData('sales.invoice_settings.pdf_print_outs.logo'))
@@ -450,11 +449,7 @@
                                 <th>
                                     @lang('admin::app.sales.invoices.invoice-pdf.price')
                                 </th>
-                                @if (core()->getAllCurrencies()->where('code', 'MMK')?->first()?->code === 'MMK')
-                                    <th>
-                                        @lang('admin::app.sales.invoices.invoice-pdf.price-mmk')
-                                    </th>
-                                @endif
+        
                                 <th>
                                     @lang('admin::app.sales.invoices.invoice-pdf.qty')
                                 </th>
@@ -462,6 +457,7 @@
                                 <th>
                                     @lang('admin::app.sales.invoices.invoice-pdf.subtotal')
                                 </th>
+
                             </tr>
                         </thead>
 
@@ -484,23 +480,6 @@
                                         @endif
                                     </td>
 
-                                    <td>
-                                        @if (core()->getConfigData('sales.taxes.sales.display_prices') == 'including_tax')
-                                            {!! core()->formatBasePrice($item->base_price_incl_tax, true) !!}
-                                        @elseif (core()->getConfigData('sales.taxes.sales.display_prices') == 'both')
-                                            {!! core()->formatBasePrice($item->base_price_incl_tax, true) !!}
-                                            
-                                            <div class="small-text">
-                                                @lang('admin::app.sales.invoices.invoice-pdf.excl-tax')
-                                                
-                                                <span>
-                                                    {{ core()->formatPrice($item->base_price) }}
-                                                </span>
-                                            </div>
-                                        @else
-                                            {!! core()->formatBasePrice($item->base_price, true) !!}
-                                        @endif
-                                    </td>
                                     @if (core()->getAllCurrencies()->where('code', 'MMK')?->first()?->code === 'MMK')
                                         <td>
                                             @if (core()->getConfigData('sales.taxes.sales.display_prices') == 'including_tax')
@@ -523,24 +502,25 @@
                                     <td>
                                         {{ $item->qty }}
                                     </td>
-
+                                   
                                     <td>
-                                        @if (core()->getConfigData('sales.taxes.sales.display_subtotal') == 'including_tax')
-                                            {!! core()->formatBasePrice($item->base_total_incl_tax, true) !!}
+                                        @if (core()->getConfigData('sales.taxes.sales.display_subtotal') == 'including_tax')      
+                                            {!! core()->formatPrice(core()->convertPrice($item->base_total_incl_tax, 'MMK'), 'MMK') !!}
                                         @elseif (core()->getConfigData('sales.taxes.sales.display_subtotal') == 'both')
-                                            {!! core()->formatBasePrice($item->base_total_incl_tax, true) !!}
+                                            {!! core()->formatPrice(core()->convertPrice($item->base_total_incl_tax, 'MMK'), 'MMK') !!}
                                             
                                             <div class="small-text">
                                                 @lang('admin::app.sales.invoices.invoice-pdf.excl-tax')
                                                 
                                                 <span>
-                                                    {{ core()->formatPrice($item->base_total) }}
+                                                    {{ core()->formatPrice(core()->convertPrice($item->base_total, 'MMK'), 'MMK') }}
                                                 </span>
                                             </div>
                                         @else
-                                            {!! core()->formatBasePrice($item->base_total, true) !!}
+                                            {!! core()->formatPrice(core()->convertPrice($item->base_total, 'MMK'), 'MMK') !!}
                                         @endif
                                     </td>
+                            
                                 </tr>
                             @endforeach
                         </tbody>
@@ -555,25 +535,33 @@
                                 <tr>
                                     <td>@lang('admin::app.sales.invoices.invoice-pdf.subtotal')</td>
                                     <td>-</td>
-                                    <td>{!! core()->formatBasePrice($invoice->base_sub_total_incl_tax, true) !!}</td>
+                                    <td>                                       
+                                        {!! core()->formatPrice(core()->convertPrice($invoice->base_sub_total_incl_tax, 'MMK'), 'MMK') !!}
+                                    </td>
                                 </tr>
                             @elseif (core()->getConfigData('sales.taxes.sales.display_subtotal') == 'both')
                                 <tr>
                                     <td>@lang('admin::app.sales.invoices.invoice-pdf.subtotal-incl-tax')</td>
                                     <td>-</td>
-                                    <td>{!! core()->formatBasePrice($invoice->base_sub_total_incl_tax, true) !!}</td>
+                                    <td>                                      
+                                        {!! core()->formatPrice(core()->convertPrice($invoice->base_sub_total_incl_tax, 'MMK'), 'MMK') !!}
+                                    </td>
                                 </tr>
                                 
                                 <tr>
                                     <td>@lang('admin::app.sales.invoices.invoice-pdf.subtotal-excl-tax')</td>
                                     <td>-</td>
-                                    <td>{!! core()->formatBasePrice($invoice->base_sub_total, true) !!}</td>
+                                    <td>                                       
+                                        {!! core()->formatPrice(core()->convertPrice($invoice->base_sub_total, 'MMK'), 'MMK') !!}
+                                    </td>
                                 </tr>
                             @else
                                 <tr>
                                     <td>@lang('admin::app.sales.invoices.invoice-pdf.subtotal')</td>
                                     <td>-</td>
-                                    <td>{!! core()->formatBasePrice($invoice->base_sub_total, true) !!}</td>
+                                    <td>                                       
+                                        {!! core()->formatPrice(core()->convertPrice($invoice->base_sub_total, 'MMK'), 'MMK') !!}
+                                    </td>
                                 </tr>
                             @endif
 
@@ -581,38 +569,50 @@
                                 <tr>
                                     <td>@lang('admin::app.sales.invoices.invoice-pdf.shipping-handling')</td>
                                     <td>-</td>
-                                    <td>{!! core()->formatBasePrice($invoice->base_shipping_amount_incl_tax, true) !!}</td>
+                                    <td>                                        
+                                        {!! core()->formatPrice(core()->convertPrice($invoice->base_shipping_amount_incl_tax, 'MMK'), 'MMK') !!}
+                                    </td>
                                 </tr>
                             @elseif (core()->getConfigData('sales.taxes.sales.display_shipping_amount') == 'both')
                                 <tr>
                                     <td>@lang('admin::app.sales.invoices.invoice-pdf.shipping-handling-incl-tax')</td>
                                     <td>-</td>
-                                    <td>{!! core()->formatBasePrice($invoice->base_shipping_amount_incl_tax, true) !!}</td>
+                                    <td>                                       
+                                        {!! core()->formatPrice(core()->convertPrice($invoice->base_shipping_amount_incl_tax, 'MMK'), 'MMK') !!}
+                                    </td>
                                 </tr>
                                 
                                 <tr>
                                     <td>@lang('admin::app.sales.invoices.invoice-pdf.shipping-handling-excl-tax')</td>
                                     <td>-</td>
-                                    <td>{!! core()->formatBasePrice($invoice->base_shipping_amount, true) !!}</td>
+                                    <td>                                       
+                                        {!! core()->formatPrice(core()->convertPrice($invoice->base_shipping_amount, 'MMK'), 'MMK') !!}
+                                    </td>
                                 </tr>
                             @else
                                 <tr>
                                     <td>@lang('admin::app.sales.invoices.invoice-pdf.shipping-handling')</td>
                                     <td>-</td>
-                                    <td>{!! core()->formatBasePrice($invoice->base_shipping_amount, true) !!}</td>
+                                    <td>                                     
+                                        {!! core()->formatPrice(core()->convertPrice($invoice->base_shipping_amount, 'MMK'), 'MMK') !!}
+                                    </td>
                                 </tr>
                             @endif
 
                             <tr>
                                 <td>@lang('admin::app.sales.invoices.invoice-pdf.tax')</td>
                                 <td>-</td>
-                                <td>{!! core()->formatBasePrice($invoice->base_tax_amount, true) !!}</td>
+                                <td>                                   
+                                    {!! core()->formatPrice(core()->convertPrice($invoice->base_tax_amount, 'MMK'), 'MMK') !!}
+                                </td>
                             </tr>
 
                             <tr>
                                 <td>@lang('admin::app.sales.invoices.invoice-pdf.discount')</td>
                                 <td>-</td>
-                                <td>{!! core()->formatBasePrice($invoice->base_discount_amount, true) !!}</td>
+                                <td>                                  
+                                    {!! core()->formatPrice(core()->convertPrice($invoice->base_discount_amount, 'MMK'), 'MMK') !!}
+                                </td>
                             </tr>
 
                             <tr>
@@ -621,7 +621,8 @@
                                 </td>
                                 <td style="border-top: 1px solid #FFFFFF;">-</td>
                                 <td style="border-top: 1px solid #FFFFFF;">
-                                    <b>{!! core()->formatBasePrice($invoice->base_grand_total, true) !!}</b>
+                                    <b>{!! core()->formatPrice(core()->convertPrice($invoice->base_grand_total, 'MMK'), 'MMK') !!}</b>
+
                                 </td>
                             </tr>
                         </tbody>
