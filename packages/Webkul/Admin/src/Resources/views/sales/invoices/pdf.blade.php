@@ -450,11 +450,7 @@
                                 <th>
                                     @lang('admin::app.sales.invoices.invoice-pdf.price')
                                 </th>
-                                @if (core()->getAllCurrencies()->where('code', 'MMK')?->first()?->code === 'MMK')
-                                    <th>
-                                        @lang('admin::app.sales.invoices.invoice-pdf.price-mmk')
-                                    </th>
-                                @endif
+            
                                 <th>
                                     @lang('admin::app.sales.invoices.invoice-pdf.qty')
                                 </th>
@@ -501,25 +497,7 @@
                                             {!! core()->formatBasePrice($item->base_price, true) !!}
                                         @endif
                                     </td>
-                                    @if (core()->getAllCurrencies()->where('code', 'MMK')?->first()?->code === 'MMK')
-                                        <td>
-                                            @if (core()->getConfigData('sales.taxes.sales.display_prices') == 'including_tax')
-                                                {!! core()->formatPrice(core()->convertPrice($item->base_price_incl_tax, 'MMK'), 'MMK') !!}
-                                            @elseif (core()->getConfigData('sales.taxes.sales.display_prices') == 'both')
-                                                {!! core()->formatPrice(core()->convertPrice($item->base_price_incl_tax, 'MMK'), 'MMK') !!}
-                                                
-                                                <div class="small-text">
-                                                    @lang('admin::app.sales.invoices.invoice-pdf.excl-tax')
-                                                    
-                                                    <span>
-                                                        {{ core()->formatPrice(core()->convertPrice($item->base_price, 'MMK'), 'MMK') }}
-                                                    </span>
-                                                </div>
-                                            @else
-                                                {!! core()->formatPrice(core()->convertPrice($item->base_price, 'MMK'), 'MMK') !!}
-                                            @endif
-                                        </td>
-                                    @endif
+                                                                       
                                     <td>
                                         {{ $item->qty }}
                                     </td>
