@@ -703,6 +703,7 @@ return [
                 'lebanese-pound'              => 'レバノンポンド（LBP）',
                 'libyan-dinar'                => 'リビアディナール（LYD）',
                 'malaysian-ringgit'           => 'マレーシアリンギット（MYR）',
+                'myanmar-kyat'                => 'ミャンマー・カイット (MMK)',
                 'mauritian-rupee'             => 'モーリシャスルピー（MUR）',
                 'mexican-peso'                => 'メキシコペソ（MXN）',
                 'moroccan-dirham'             => 'モロッコディルハム（MAD）',
